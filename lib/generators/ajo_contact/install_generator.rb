@@ -4,11 +4,11 @@ module AjoContact
     desc "Copy over view files"
 
     def self.source_root
-      @source_root ||= File.join(File.dirname(__FILE__), 'templates')
+      @source_root ||= File.join(File.dirname(__FILE__), 'ajo_contact')
     end
 
     def copy_directories
-      directory 'ajo_contact', 'app/views'
+      directory 'contact', 'app/views/ajo_contact/contact'
     end
   end
 end
