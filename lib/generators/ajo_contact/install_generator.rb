@@ -1,4 +1,4 @@
-require 'rails/generators/.'
+require 'rails/generators/base'
 module AjoContact
   module Generators
     class InstallGenerator << Rails::Generators::Base
