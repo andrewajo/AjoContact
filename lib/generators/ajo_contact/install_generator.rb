@@ -1,6 +1,6 @@
 require 'rails/generators/base'
 module AjoContact
-  class InstallGenerator << Rails::Generators::Base
+  class InstallGenerator < Rails::Generators::Base
     desc "Copy over view files"
 
     def self.source_root
