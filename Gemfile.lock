@@ -4,6 +4,7 @@ PATH
     ajo_contact (0.0.1)
       haml
       rails (~> 3.2.12)
+      railties (~> 3.2)
 
 GEM
   remote: http://rubygems.org/
