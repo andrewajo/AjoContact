@@ -1,0 +1,28 @@
+#contact_page
+  %h1= t "contact.header"
+  = form_for @message, :url => contact_index_path do |f|
+    .field
+      = f.label I18n.t('contact.form.first_name')
+      = f.text_field :first_name
+      .error= @message.errors['first_name'].first
+
+    .field
+      = f.label I18n.t('contact.form.last_name')
+      = f.text_field :last_name
+      .error= @message.errors['last_name'].first
+    .field
+      = f.label I18n.t('contact.form.email_address')
+      = f.text_field :email_address
+      .error= @message.errors['email_address'].first
+
+    .field
+      = f.label I18n.t('contact.form.subject')
+      = f.select :subject, I18n.t('contact.form.subject_options').map{|key, value| [value[:option], value[:value]]}
+      .error= @message.errors['subject'].first
+
+    .field
+      = f.label I18n.t('contact.form.message')
+      = f.text_area :message
+      .error= @message.errors['message'].first
+
+    = f.submit I18n.t('helpers.submit')
