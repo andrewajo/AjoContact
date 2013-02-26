@@ -1,0 +1,18 @@
+en:
+  contact:
+    header: 'Contact Us'
+    form:
+      first_name: 'Custom First Name'
+      first_name_error: 'Error'
+      last_name: 'Custome Last Name'
+      email: 'Custom Email'
+      message: 'Custome message'
+      subject: 'Test'
+      subject_options:
+        item1:
+          option: 'Contact'
+          value: 'Test'
+        item2:
+          option: 'Contact2'
+          value: 'Test2'
+      submit: 'Lets do it!'

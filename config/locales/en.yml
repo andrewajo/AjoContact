@@ -1,0 +1,23 @@
+en:
+  contact:
+    header: 'Contact Us'
+    form:
+      first_name: 'First Name'
+      last_name: 'Last Name'
+      email: 'Email'
+      message: 'Message'
+      subject: 'Subject'
+      subject_options:
+        item1:
+          option: 'Contact'
+          value: 'Test'
+        item2:
+          option: 'Contact2'
+          value: 'Test2'
+      error:
+        first_name: 'Please provide a first name!'
+        last_name: 'Please provide a last name!'
+        email_address: 'Please provide an email!'
+        message: 'Please provide a message!'
+        subject: 'Please provide a subject!'
+      submit: 'Lets do it!'
