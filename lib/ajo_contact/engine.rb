@@ -4,6 +4,7 @@ module AjoContact
     isolate_namespace AjoContact
     paths["config/locales"]
     paths["lib"]
+    config.autoload_paths += %W(#{config.root}/lib)
 
   end
 end
