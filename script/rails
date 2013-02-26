@@ -4,9 +4,6 @@
 ENGINE_ROOT = File.expand_path('../..', __FILE__)
 ENGINE_PATH = File.expand_path('../../lib/ajo_contact/engine', __FILE__)
 
-generators do
-  require "../../lib/generators/install_generator.rb"
-end
-
 require 'rails/all'
 require 'rails/engine/commands'
+require '../../lib/generators/ajo_contact/install_generator.rb'
