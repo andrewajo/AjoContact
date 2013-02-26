@@ -8,7 +8,7 @@ module AjoContact
     end
 
     def copy_directories
-      directory 'app/views', 'ajo_contact'
+      directory 'ajo_contact', 'app/views'
     end
   end
 end
