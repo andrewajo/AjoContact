@@ -4,7 +4,7 @@ module AjoContact
     isolate_namespace AjoContact
     paths["config/locales"]
     generators do
-      require "lib/generators/ajo_contact/install_generator"
+      require "lib/generators/ajo_contact/install_generator.rb"
     end
   end
 end
