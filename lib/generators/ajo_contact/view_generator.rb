@@ -1,4 +1,4 @@
-require 'rails/generators'
+require 'rails'
 module AjoContact
   module Generators
     class ViewGenerator << Rails::Generators::Base
