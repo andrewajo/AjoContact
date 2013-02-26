@@ -3,6 +3,7 @@ module AjoContact
   module Generators
     class ViewGenerator << Rails::Generators::Base
       desc "Copy over view files"
+      include Rails::Generators
 
       source_root File.expand_path('../templates', __FILE__)
 
