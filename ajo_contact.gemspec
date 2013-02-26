@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.description = "AJO Consulting"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["lib/generators/install_generator.rb"]
   s.test_files = Dir["test/**/*"]
   s.require_paths = ["lib"]
 
