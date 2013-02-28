@@ -2,6 +2,7 @@ require_dependency "ajo_contact/application_controller"
 
 module AjoContact
   class ContactController < ApplicationController
+    layout 'application'
     def index
       @message = Message.new
     end
