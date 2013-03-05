@@ -9,6 +9,8 @@ module AjoContact
 
     def create
       @message = Message.new(params[:message])
+      @email = ContactMailer(params[:email_address], params[:subject], params[:message])
+      @email.deliver
       if @message.save
         redirect_to contact_thank_you_path
       else
