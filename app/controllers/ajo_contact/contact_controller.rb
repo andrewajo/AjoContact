@@ -15,9 +15,9 @@ module AjoContact
         @message.errors.add(:recaptcha, "* Please try again")
         respond_with(@message)
       else
-        @email = ContactMailer.contact_email(params[:email_address], params[:subject], params[:message][:message]).deliver
-        @email.deliver
         if @message.save
+          @email = ContactMailer.contact_email(params[:email_address], params[:subject], params[:message][:message]).deliver
+          @email.deliver
           redirect_to contact_thank_you_path
         else
           render :action => :index
