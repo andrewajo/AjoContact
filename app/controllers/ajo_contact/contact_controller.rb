@@ -13,7 +13,7 @@ module AjoContact
         flash.delete :recaptcha_error
         @message.valid?
         @message.errors.add(:recaptcha, "* Please try again")
-        respond_with(@message)
+        render :action => :index
       else
         if @message.save
           @email = ContactMailer.contact_email(params[:email_address], params[:subject], params[:message][:message]).deliver
