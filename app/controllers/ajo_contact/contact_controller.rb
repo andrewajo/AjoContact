@@ -9,12 +9,19 @@ module AjoContact
 
     def create
       @message = Message.new(params[:message])
-      @email = ContactMailer.contact_email(params[:email_address], params[:subject], params[:message][:message]).deliver
-      @email.deliver
-      if @message.save
-        redirect_to contact_thank_you_path
+      if !verify_recaptcha
+        flash.delete :recaptcha_error
+        @message.valid?
+        @message.errors.add(:recaptcha, "* Please try again")
+        respond_with(@message)
       else
-        render :action => :index
+        @email = ContactMailer.contact_email(params[:email_address], params[:subject], params[:message][:message]).deliver
+        @email.deliver
+        if @message.save
+          redirect_to contact_thank_you_path
+        else
+          render :action => :index
+        end
       end
     end
 
