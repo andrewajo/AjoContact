@@ -9,10 +9,11 @@ module AjoContact
 
     def create
       @message = Message.new(params[:message])
+      @message.errors.add(:recaptcha, "* Please try again")
       if !verify_recaptcha
         flash.delete :recaptcha_error
         @message.valid?
-        @message.errors.add(:recaptcha, "* Please try again")
+
         render :action => :index
       else
         if @message.save
