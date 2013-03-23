@@ -1,2 +1,7 @@
-%h1= "Message from #{@first_name} #{@last_name}:"
+"First name: #{@message.first_name}"
+"Last name: #{@message.first_name}"
+"Sent at: "#{@message.created_at}"
+"User Agent":
+= simple_format @message.user_agent
+%br
 = simple_format @message
