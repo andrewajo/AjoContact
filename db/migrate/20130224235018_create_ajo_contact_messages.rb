@@ -5,6 +5,7 @@ class CreateAjoContactMessages < ActiveRecord::Migration
       t.string :last_name
       t.string :email_address
       t.string :subject
+      t.text :user_agent
       t.text :message
       t.timestamps
     end

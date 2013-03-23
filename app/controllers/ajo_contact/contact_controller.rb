@@ -2,6 +2,13 @@ require_dependency "ajo_contact/application_controller"
 
 module AjoContact
   class ContactController < ApplicationController
+    before_filter :force_non_ssl, :only => :index
+
+    def force_non_ssl
+      if request.ssl? && Rails.env.production?
+        redirect_to :protocol => 'http://', :status => :moved_permanently
+      end
+    end
     layout 'application'
     def index
       @message = Message.new
@@ -9,6 +16,7 @@ module AjoContact
 
     def create
       @message = Message.new(params[:message])
+      @message.user_agent = request.env["HTTP_USER_AGENT"]
       if !verify_recaptcha
         flash.delete :recaptcha_error
         @message.valid?
