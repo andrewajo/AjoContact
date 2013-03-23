@@ -25,7 +25,7 @@ module AjoContact
         render :action => :index
       else
         if @message.save
-          @email = ContactMailer.contact_email(params[:email_address], params[:subject], params[:message][:message]).deliver
+          @email = AjoContact::ContactMailer.contact_email(@message.email_address, @message.subject, @message.message, 'andrew@ajoconsulting.com').deliver
           @email.deliver
           redirect_to contact_thank_you_path
         else
