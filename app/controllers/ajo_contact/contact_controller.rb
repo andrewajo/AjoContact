@@ -17,6 +17,7 @@ module AjoContact
     def create
       @message = Message.new(params[:message])
       @message.user_agent = request.env["HTTP_USER_AGENT"]
+      @message.source = 'microsite'
       if !verify_recaptcha
         flash.delete :recaptcha_error
         @message.valid?
