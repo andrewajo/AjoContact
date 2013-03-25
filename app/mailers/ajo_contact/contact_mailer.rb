@@ -1,6 +1,6 @@
 module AjoContact
   class ContactMailer < ActionMailer::Base
-    default from: "admin@purmoments.heroku.com"
+    default from: "admin@lactantiapurmoments.com"
 
     def contact_email(from, subject, message, to)
       @message = message
