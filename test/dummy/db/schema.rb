@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(:version => 20130224235018) do
     t.string   "last_name"
     t.string   "email_address"
     t.string   "subject"
+    t.string   "source"
+    t.text     "user_agent"
     t.text     "message"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
