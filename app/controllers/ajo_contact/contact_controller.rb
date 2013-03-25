@@ -17,7 +17,6 @@ module AjoContact
     def create
       @message = Message.new(params[:message])
       @message.user_agent = request.env["HTTP_USER_AGENT"]
-      @message.source = 'microsite'
       if !verify_recaptcha
         flash.delete :recaptcha_error
         @message.valid?
@@ -25,7 +24,7 @@ module AjoContact
         render :action => :index
       else
         if @message.save
-          @email = AjoContact::ContactMailer.contact_email(@message.email_address, @message.subject, @message, 'andrew@ajoconsulting.com').deliver
+          @email = AjoContact::ContactMailer.contact_email(@message.email_address, @message.subject, @message, 'parmalat-customerservice@bluebandmedia.com').deliver
           @email.deliver
           redirect_to contact_thank_you_path
         else
