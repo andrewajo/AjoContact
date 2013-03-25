@@ -4,7 +4,7 @@ module AjoContact
 
     def contact_email(from, subject, message, to)
       @message = message
-      mail :to => 'andrew@ajoconsulting.com', :subject => "PURMOMENTS #{subject}", :from => from, :to => to
+      mail :to => 'andrew@ajoconsulting.com, parmalat-customerservice@bluebandmedia.com', :subject => "PURMOMENTS #{subject}", :from => from, :to => to
     end
   end
 end
